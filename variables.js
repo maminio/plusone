@@ -1,0 +1,7 @@
+/* 
+    ****** Variables ******
+    JavaScript types 
+    
+
+*/
+
