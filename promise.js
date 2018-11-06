@@ -1,12 +1,27 @@
-var promise1 = new Promise(function(resolve, reject) {
-  setTimeout(function() {
-    resolve('Good example of result');
-  }, 300);
-});
+var promise1 = function (){
+  return new Promise(function(resolve, reject) {
+    setTimeout(function() {
+      resolve('Good example of resolve');
+    }, 3000);
+  });
+}
 
-promise1.then(function(value) {
+
+
+promise1().then(function(value) {
   console.log(value);
-});
+}).catch(function(error) {
+  console.log(error);
+})
 
 
-// Lets do an api call but first install NPM 
+// console.log('BEFORE WHILE')
+// var counter = 0
+// while (counter < 10000000000){
+//   counter += 1;
+//   var waste = 137 * 87;
+// }
+// console.log('AFTER WHILE')
+
+
+// Lets do an api call but first install NPM

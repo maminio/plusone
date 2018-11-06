@@ -71,17 +71,17 @@ console.log('University Name:',kcl['name']);
 // */
 //
 //
-// var realMadrid = {
-//   city: 'Madrid',
-//   players: ['Benzema', 'Bale', 'Marcelo', 'Ramos'],
-//   playGame: function () {
-//     return Math.ceil((Math.random()*1000)) % 2 === 0
-//   },
-//   sendOffRamos: function () {
-//     this.players.pop(this.players.indexOf('Ramos'))
-//     return this.players;
-//   }
-// }
+var realMadrid = {
+  city: 'Madrid',
+  players: ['Benzema', 'Bale', 'Marcelo', 'Ramos'],
+  playGame: function () {
+    return Math.ceil((Math.random()*1000)) % 2 === 0
+  },
+  sendOffRamos: function () {
+    this.players.pop(this.players.indexOf('Ramos'))
+    return this.players;
+  }
+}
 //
 //
 //
