@@ -1,17 +1,17 @@
 var promise1 = function (){
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
-      resolve('Good example of resolve');
-    }, 3000);
+  return new Promise(function (resolve, reject){
+    setTimeout(function(){
+        reject(" YAY we resolved ")
+    },3000)
   });
 }
 
 
 
-promise1().then(function(value) {
+promise1().then(function resolveOfPromise(value) {
   console.log(value);
 }).catch(function(error) {
-  console.log(error);
+  console.log('ERROR===> ',error);
 })
 
 

@@ -8,6 +8,9 @@ var WEATHER_URL = 'https://www.metaweather.com/api/location/'
 
 function getLatLng(name){
   // https://www.metaweather.com/api/location/search/?query= + 'London'
+    console.log({
+      URL: `${locationUrl}${name}`
+    })
     return axios.get(`${locationUrl}${name}`)
 }
 
@@ -39,24 +42,24 @@ function getWeather(name) {
 
 getWeather('London');
 
-// function betterGetWeather(name) {
-//   return new Promise(function(resolve, reject){
-//     getLatLng(name)
-//     .then(function(result){
-//       return result.data[0].woeid;
-//     })
-//     .then(function(woeid){
-//       return axios.get(`${WEATHER_URL}${woeid}`)
-//     })
-//     .then(function(result){
-//       resolve(result.data.consolidated_weather);
-//     })
-//     .catch(function(error) {
-//       reject(error);
-//     })
-//   })
-// }
-//
-// betterGetWeather('London').then(function(result){
-//   console.log('result',result);
-// })
+function betterGetWeather(name) {
+  return new Promise(function(resolve, reject){
+    getLatLng(name)
+    .then(function(result){
+      return result.data[0].woeid;
+    })
+    .then(function(woeid){
+      return axios.get(`${WEATHER_URL}${woeid}`)
+    })
+    .then(function(result){
+      resolve(result.data.consolidated_weather);
+    })
+    .catch(function(error) {
+      reject(error);
+    })
+  })
+}
+
+betterGetWeather('London').then(function(result){
+  console.log('result',result);
+})
